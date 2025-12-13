@@ -12,13 +12,4 @@ class Asteroid(CircleShape):
         pygame.draw.circle(screen, "white", self.position, self.radius, LINE_WIDTH)
     
     def update(self, dt):
-        keys = pygame.key.get_pressed()
-
-        if keys[pygame.K_a]:
-            self.x -= (self.velocity * dt)
-        if keys[pygame.K_d]:
-            self.x += (self.velocity * dt)
-        if keys[pygame.K_w]:
-            self.y += (self.velocity * dt)
-        if keys[pygame.K_s]:
-            self.y -= (self.velocity * dt)
+        self.position += (self.velocity * dt)
